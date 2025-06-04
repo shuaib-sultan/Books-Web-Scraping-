@@ -1,55 +1,70 @@
-# Books Web Scraping Project 📚
+# 📘 Books Scraper & Analyzer (v2)
 
-## About the Project
-This project is a web scraping script built using **Python**, which scrapes data from [Books to Scrape](https://books.toscrape.com), extracts relevant information about each book (title, image URL, detail page link, and rating), and performs data analysis using **Pandas**.
-
-The extracted data is saved into:
-- `allBooks.csv`
-- `allBooks.json`
-
-And then filtered into:
-- `five_rate.csv`: books with a rating of 5 stars.
-- `under_three_rate.csv`: books with a rating less than 3 stars.
+## Overview
+This is the second version of a Python-based web scraping project for the website [Books to Scrape](https://books.toscrape.com).  
+In this version, we extract and store detailed information about each book and analyze it using **Pandas**.
 
 ---
 
-## Features
-- Scrape multiple pages (50 total) of books.
-- Extract book title, rating, cover image, and link.
-- Save the data in CSV and JSON formats.
-- Analyze ratings using Pandas.
-- Filter and export highly-rated and low-rated books.
+## 🔍 Features
+- Scrape multiple pages of books.
+- Extract: title, image, detail link, star rating, tax prices, and descriptions.
+- Store data into:
+  - `allBooks.json`
+  - `allBooks.csv`
+- Save each book's description in a separate `.txt` file.
+- Perform rating & price analysis using **Pandas**:
+  - Total & average prices per rating.
+  - Most and least expensive books.
+  - Count of books by rating.
 
 ---
 
-## Technologies Used
+## 📦 Technologies Used
 - `requests`
 - `BeautifulSoup`
 - `pandas`
 - `json`
 - `urllib.parse`
+- `os`
 
 ---
 
-## How to Run
+## 📂 Project Structure
+books-scraper-v2/
+│
+├── allBooks.json
+├── allBooks.csv
+├── Descriptions/
+│ ├── Book_Title_1.txt
+│ └── ...
+├── rating_analysis.csv
+├── bookScraping.py
+└── analysis.py
+
+---
+
+## ▶️ How to Run
 
 ```bash
-# Clone the repo
-git clone https://github.com/your_username/books-scraper.git
-cd books-scraper
+git clone https://github.com/your_username/books-scraper-v2.git
+cd books-scraper-v2
 
-# Install dependencies
 pip install -r requirements.txt
 
-# Run the script
-python main.py
+python main.py  # to scrape
+python analysis.py  # to analyze
 ```
-## Future Improvements
-- Add graphical analysis using matplotlib or seaborn.
 
-- Handle price and availability data (if available).
+## 🔮 Future Enhancements
+- Add visual charts with matplotlib or seaborn.
 
-- Export a summary report of ratings.
+- Add CLI options to select page ranges.
+
+- Export HTML report of summaries.
+
+- Add category-based scraping.
+
 ## 👨‍💻 Author
-shuaib-sultan >in my way to master Developer
-> this my first project with this organizetion .
+Shuaib Sultan
+> On my way to becoming a master developer.
